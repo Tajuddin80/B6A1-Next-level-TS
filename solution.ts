@@ -81,3 +81,30 @@ const printBookDetails = (book: Book): void => {
     }`
   );
 };
+
+//! Problem 7
+
+const getUniqueValues = <T extends string | number, U extends string | number>( firstArray: T[], secondArray: U[]): (T | U)[] => {
+  const uniqueValues: (T | U)[] = [];
+
+  const valueExists = (value: T | U): boolean => {
+    for (let i = 0; i < uniqueValues.length; i++) {
+      if (uniqueValues[i] === value) return true;
+    }
+    return false;
+  };
+
+  for (let i = 0; i < firstArray.length; i++) {
+    if (!valueExists(firstArray[i])) {
+      uniqueValues.push(firstArray[i]);
+    }
+  }
+
+  for (let i = 0; i < secondArray.length; i++) {
+    if (!valueExists(secondArray[i])) {
+      uniqueValues.push(secondArray[i]);
+    }
+  }
+
+  return uniqueValues;
+};
