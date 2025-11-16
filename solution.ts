@@ -41,3 +41,12 @@ class Person {
     return `Name: ${this.name}, Age: ${this.age}`;
   }
 }
+
+//! Problem 4
+type IBook = {
+  title: string;
+  rating: number;
+};
+const filterByRating = (value: IBook[]): IBook[] => {
+  return value.filter((book) => book.rating >= 4.0);
+};
