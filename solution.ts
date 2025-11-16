@@ -63,11 +63,21 @@ type TUser = {
 const filterActiveUsers = (value: TUser[]): TUser[] => {
   return value.filter((user) => user.isActive);
 };
-const users = [
-  { id: 1, name: "Rakib", email: "rakib@example.com", isActive: true },
-  { id: 2, name: "Asha", email: "asha@example.com", isActive: false },
-  { id: 3, name: "Rumi", email: "rumi@example.com", isActive: true },
-  { id: 3, name: "Sumi", email: "rumi@example.com", isActive: false },
-];
 
-console.log(filterActiveUsers(users));
+//! Problem 6
+
+interface Book {
+  title: string;
+  author: string;
+  publishedYear: number;
+  isAvailable: boolean;
+}
+
+const printBookDetails = (book: Book): void => {
+  const { title, author, publishedYear, isAvailable } = book;
+  console.log(
+    `Title: ${title}, Author: ${author}, Published: ${publishedYear}, Available: ${
+      isAvailable ? "Yes" : "No"
+    }`
+  );
+};
