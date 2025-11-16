@@ -15,3 +15,15 @@ const formatValue = (
   return result;
 };
 
+//! Problem 2
+
+const getLength = (value: string | unknown[]): number => {
+  const result =
+    typeof value === "string"
+      ? value.length
+      : Array.isArray(value)
+      ? value.length
+      : 0;
+  return result;
+};
+
