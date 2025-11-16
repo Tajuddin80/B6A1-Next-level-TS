@@ -43,10 +43,31 @@ class Person {
 }
 
 //! Problem 4
-type IBook = {
+
+type TBook = {
   title: string;
   rating: number;
 };
-const filterByRating = (value: IBook[]): IBook[] => {
+const filterByRating = (value: TBook[]): TBook[] => {
   return value.filter((book) => book.rating >= 4.0);
 };
+
+//! Problem 5
+
+type TUser = {
+  id: number;
+  name: string;
+  email: string;
+  isActive: boolean;
+};
+const filterActiveUsers = (value: TUser[]): TUser[] => {
+  return value.filter((user) => user.isActive);
+};
+const users = [
+  { id: 1, name: "Rakib", email: "rakib@example.com", isActive: true },
+  { id: 2, name: "Asha", email: "asha@example.com", isActive: false },
+  { id: 3, name: "Rumi", email: "rumi@example.com", isActive: true },
+  { id: 3, name: "Sumi", email: "rumi@example.com", isActive: false },
+];
+
+console.log(filterActiveUsers(users));
