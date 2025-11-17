@@ -38,7 +38,7 @@ class Person {
     this.age = age;
   }
   getDetails(): string {
-    return `Name: ${this.name}, Age: ${this.age}`;
+    return `'Name: ${this.name}, Age: ${this.age}'`;
   }
 }
 
@@ -84,7 +84,10 @@ const printBookDetails = (book: Book): void => {
 
 //! Problem 7
 
-const getUniqueValues = <T extends string | number, U extends string | number>( firstArray: T[], secondArray: U[]): (T | U)[] => {
+const getUniqueValues = <T extends string | number, U extends string | number>(
+  firstArray: T[],
+  secondArray: U[]
+): (T | U)[] => {
   const uniqueValues: (T | U)[] = [];
 
   const valueExists = (value: T | U): boolean => {
@@ -107,4 +110,26 @@ const getUniqueValues = <T extends string | number, U extends string | number>( 
   }
 
   return uniqueValues;
+};
+
+//! Problem 8
+
+type TProduct = {
+  name: string;
+  price: number;
+  quantity: number;
+  discount?: number;
+};
+const calculateTotalPrice = (products: TProduct[]): number => {
+  if (!products.length) {
+    return 0;
+  }
+  return products.reduce((total, product) => {
+    const basePrice = product.price * product.quantity;
+
+    const finalPrice = product.discount
+      ? basePrice - (basePrice * product.discount) / 100
+      : basePrice;
+    return total + finalPrice;
+  }, 0);
 };
