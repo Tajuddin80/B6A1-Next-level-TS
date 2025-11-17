@@ -1,4 +1,4 @@
-//! Problem 1
+
 
 const formatValue = (
   value: string | number | boolean
@@ -15,7 +15,7 @@ const formatValue = (
   return result;
 };
 
-//! Problem 2
+
 
 const getLength = (value: string | unknown[]): number => {
   const result =
@@ -27,7 +27,7 @@ const getLength = (value: string | unknown[]): number => {
   return result;
 };
 
-//! Problem 3
+
 
 class Person {
   name: string;
@@ -42,7 +42,7 @@ class Person {
   }
 }
 
-//! Problem 4
+
 
 type TBook = {
   title: string;
@@ -52,7 +52,7 @@ const filterByRating = (value: TBook[]): TBook[] => {
   return value.filter((book) => book.rating >= 4.0);
 };
 
-//! Problem 5
+
 
 type TUser = {
   id: number;
@@ -64,7 +64,7 @@ const filterActiveUsers = (value: TUser[]): TUser[] => {
   return value.filter((user) => user.isActive);
 };
 
-//! Problem 6
+
 
 interface Book {
   title: string;
@@ -82,7 +82,7 @@ const printBookDetails = (book: Book): void => {
   );
 };
 
-//! Problem 7
+
 
 const getUniqueValues = <T extends string | number, U extends string | number>(
   firstArray: T[],
@@ -112,7 +112,7 @@ const getUniqueValues = <T extends string | number, U extends string | number>(
   return uniqueValues;
 };
 
-//! Problem 8
+
 
 type TProduct = {
   name: string;
